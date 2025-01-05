@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <title>Mostrar y Ocultar Divs</title>
+    <style>
+        p{
+            font-family: "Teko", serif;
+            font-size: 22px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        #a, #b, #c {
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        #a {
+            background-color: #f9c2c2;
+        }
+
+        #b {
+            background-color: #c2f9c2;
+        }
+
+        #c {
+            background-color: #c2c2f9;
+        }
+
+        aside {
+            position: fixed; /* Hace que el aside quede fijo */
+    top: 0;
+    left: 0;
+    width: 25%; /* 25% del ancho total de la pantalla */
+    height: 100%; /* Ocupa toda la altura del viewport */
+    background-color: black; /* Fondo */
+    padding: 20px;
+    overflow-y: auto; /* Scroll interno si el contenido es largo */
+    color: #c2c2f9;
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Ordena el contenido en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        img {
+            display: block;
+            width: 80%;
+            margin-bottom: 15px;
+        }
+
+        .main-content {
+            margin-left: 25%;
+            padding: 20px;
+        }
+
+        section {
+            margin-top: 15%;
+            margin-bottom: 15%;
+        }
+
+        /* Estilo para el desplazamiento suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Resaltar el enlace activo */
+        a.active {
+            color: #FF006E;
+        }
+        h2{
+            color: #40E0D0;
+        }
+        h4{
+            color: #50404d ;
+        }
+        p{
+            color:white;
+        }
+        i{
+            margin-right: 3px;
+        }
+        a.active {
+    color: yellow; /* El color que desees para el enlace activo */
+    font-weight: bold;
+}
+.card-text{
+    color: #50404d;
+}
+    </style>
+</head>
+<body>
+
+    <aside>
+        <img class="rounded-circle" src="./img/Captura de pantalla 2024-12-12 163639.png" alt="" style="display: block; margin: auto; width: 50%; margin-bottom: 15px;">
+        <ul>
+            <li><a href="#oscar" onclick="setActiveLink('oscar')">Oscar</a></li>
+            <li><a href="#sobremi" onclick="setActiveLink('sobremi')">Sobre mi</a></li>
+            <li><a href="#portafolios" onclick="setActiveLink('portafolios')">Portafolios</a></li>
+            <li><a href="#formacion" onclick="setActiveLink('formacion')">Formación</a></li>
+            <li><a href="#skills" onclick="setActiveLink('skills')">Skills</a></li>
+            <li><a href="#contactar" onclick="setActiveLink('contactar')">Contactar</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content" style="background-color: #9932cc;">
+        <div class="container mt-5">
+            <!-- Oscar -->
+            <section id="oscar" class="mb-5">
+                <div class="row text-center">
+                    <h1 style="color: white;">Oscar</h1>
+                    <h1 style="color: #40E0D0;">von Ruepprecht Martin</h1>
+                 <p></p>
+                    <h4>BIENVENIDOS A MI PORTAFOLIO COMO DESARROLLADOR</h4>
+                    <div class="contenedor mt-3">
+                        <a href="./fichero/tecnico.pdf" download="oscarvRM_CV.pdf">
+                          <button id="curriculum" class="btn btn-warning">Descargar mi CV</button>
+                        </a>
+                      </div>
+                      <div id="imggroup" class="d-flex justify-content-center gap-3 mt-4">
+                        <a href="https://www.linkedin.com" target="_blank">
+                          <button id="linkedin" class="btn btn-dark"><i class="fa-brands fa-linkedin"></i></button>
+                        </a>
+                        <a href="https://github.com/oscarvonrue" target="_blank">
+                          <button id="github" class="btn btn-dark"><i class="fa-brands fa-github"></i></button>
+                        </a>
+                        <a href="https://www.instagram.com/oscar.vm_00/" target="_blank">
+                          <button id="instagram" class="btn btn-dark"><i class="fa-brands fa-instagram"></i></button>
+                        </a>
+                      </div>
+                    <p id="cadena" class="mt-5">
+                        Si me quieres contactar, déjame un mensaje en este correo -> 
+                        <a href="mailto:oscarvonrue0809@gmail.com" class="text-warning">oscarvonrue0809@gmail.com</a>
+                    </p>
+                </div>
+            </section>
+          
+            <!-- Sobre mí -->
+            <section id="sobremi" class="mb-5">
+                <div class="row">
+                    <h2 class="text-center" >Sobre mí</h2>
+                    <p class="mt-3">Hola, soy Oscar</p>
+                    <p id="a1">Tengo experiencia en lenguajes como <strong> C# </strong>,   <strong>Java</strong>  , <strong> Kotlin</strong> y <strong> Dart </strong>, así como en frameworks como .NET, Flutter y Bootstrap. Esta experiencia la gané trabajando en el sector, pero la mayoría de manera autodidacta en proyectos personales, lo que ha permitido fortalecer mis habilidades.</p>
+                    <p id="a1">Mi objetivo personal es especializarme en el desarrollo móvil, pero no descarto otros campos. Disfruto aprendiendo y desarrollando herramientas.</p>
+                    <p id="a1">Fuera de la programación, me gusta la cocina, el campo, la naturaleza y el cine.</p>
+                 </div>
+            </section>
+          
+            <!-- Portafolios -->
+            <section id="portafolios" class="mb-5">
+                <div class="row text-center">
+                  <h2>Portafolios</h2>
+                  <p class="mt-3">Aquí puedes encontrar algunos de mis proyectos destacados:</p>
+              
+                  <div class="col-md-6">
+                    <div class="card bg-secondary text-white">
+                      <img src="./img/BreakBell_.png" class="card-img-top mx-auto d-block" alt="Proyecto 1" style="width:65%;">
+                      <div class="card-body">
+                        <h5 class="card-title">Breakbelly</h5>
+                        <p class="card-text ">Aplicación móvil de gimnasio y rutinas personales.</p>
+                        <a href="breakbelly.html" class="btn btn-warning">Ver más</a>
+                      </div>
+                    </div>
+                  </div>
+              
+           
+              
+                  <div class="col-md-6">
+                    <div class="card bg-secondary text-white">
+                      <img src="./img/DALL·E-2025-01-03-17.51 (1).png" class="card-img-top" alt="Proyecto 3">
+                      <div class="card-body">
+                        <h5 class="card-title">App bar 3</h5>
+                        <p class="card-text ">Aplicación móvil donde gestionas los productos de un bar.</p>
+                        <a href="Bar.html" class="btn btn-warning" >Ver más</a>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="row text-center">
+                    <p class="mt-3">Aquí puedes encontrar algunos de mis códigos destacados:</p>
+                  </div>
+              
+                  <div class="col-md-3">
+                    <div class="card bg-secondary text-white">
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Adivina el número</h5>
+                        <p class="card-text">Código realizado en <strong>Dart</strong>. Consiste en un código que da 3 intentos para adivinar el número elegido al azar del 1 al 100.</p>
+                        <a href="#" class="btn btn-warning" onclick="window.location.href='https://github.com/oscarvonrue/num'"><i class="fa-brands fa-github"></i></a>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-md-3">
+                    <div class="card bg-secondary text-white">
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Código del César</h5>
+                        <p class="card-text ">Código realizado en <strong>JavaScript</strong>. Consiste en un código donde incluyes una frase y la codifica según el código de Julio César.</p>
+                        <a href="#" class="btn btn-warning" onclick="window.location.href='https://github.com/oscarvonrue/CodigoCesar '"><i class="fa-brands fa-github"></i></a>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-md-3">
+                    <div class="card bg-secondary text-white">
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Frutas</h5>
+                        <p class="card-text ">Código realizado en <strong>Java+SQLite</strong>. Appicacion de prueba para una fruteria y su gestion.</p>
+                        <a href="#" class="btn btn-warning" onclick="window.location.href='https://github.com/oscarvonrue/Frutas  '"><i class="fa-brands fa-github"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="card bg-secondary text-white">
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Verficador</h5>
+                        <p class="card-text ">Código realizado en <strong>Java+Firebase</strong>. Appicacion de prueba para el inicio de sesion con numero de telefono.</p>
+                        <a href="#" class="btn btn-warning" onclick="window.location.href='https://github.com/oscarvonrue/Verficador  '"><i class="fa-brands fa-github"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+          
+            <!-- Formación -->
+            <section id="formacion" class="mb-5">
+                <div class="row">
+                    <h2 class="text-center">Formación</h2>
+                    <ul class="list-group">
+                        <li class=" bg-secondary list-group-item">Desarrollador de aplicaciones - Bodegas Maetierra - 09/23 - 07-24</li>
+                        <li class=" bg-secondary list-group-item">Grado Superior Desarrollo Aplicaciones Multiplataforma - IES Comercio - 2021-2023</li>
+                        <li class=" bg-secondary list-group-item">Bachillerato de letras- IES Valle del Oja - 2016-2018</li>
+                      </ul>
+                </div>
+            </section>
+          
+            <!-- Skills -->
+            <section id="skills" class="mb-5">
+                <div class="row text-center">
+                    <h2>Skills</h2>
+                    <div class="col-md-4">
+                        <h4 style="  text-decoration: underline; ">Lenguajes</h4>
+                        <ul>
+                          <li><button type="button" class="btn btn-outline-dark">C#</button></li>
+                          <li></i><button type="button" class="btn btn-outline-dark"><i class="fa-brands fa-java"></i>Java</button></li>
+                          <li><button type="button" class="btn btn-outline-dark"><i class="fa-brands fa-android"></i>Kotlin</button></li>
+                          <li> <button type="button" class="btn btn-outline-dark"><i class="fa-brands fa-dart-lang"></i>Dart</button></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-4">
+                        <h4 style="  text-decoration: underline; ">Frameworks</h4>
+                        <ul>
+                          <li><button type="button" class="btn btn-outline-dark"> <i class="fa-brands fa-battle-net"></i>.Net</button></li>
+                          <li><button type="button" class="btn btn-outline-dark"><i class="fa-brands fa-flutter"></i>Flutter</button></li>
+                          <li><button type="button" class="btn btn-outline-dark"> <i class="fa-brands fa-bootstrap"></i>Bootstrap</button></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-4">
+                        <h4 style="  text-decoration: underline; ">Herramientas</h4>
+                        <ul>
+                          <li><button type="button" class="btn btn-outline-dark"><i class="fa-brands fa-github"></i> Git</button></li>
+                          <li><button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-code"></i>Visual Studio</button></li>
+                          <li><button type="button" class="btn btn-outline-dark"><i class="fa-brands fa-android"></i>Android Studio</button></li>
+                        </ul>
+                      </div>
+                </div>
+            </section>
+          
+            <!-- Contactar -->
+            <section id="contactar" class="mb-5">
+                <div class="row text-center">
+                    <h2>Contáctame</h2>
+                    <p>Email: <a href="mailto:oscarvonrue0809@gmail.com" class="text-warning">oscarvonrue0809@gmail.com</a></p>
+                    <p>WhatsApp: +34 639 576 526</p>
+                    <h4>Mis Redes Sociales</h4>
+                    <div id="imggroup" class="d-flex justify-content-center gap-3">
+                      <a href="https://www.linkedin.com" target="_blank">
+                        <button id="linkedin" class="btn btn-dark"><i class="fa-brands fa-linkedin"></i></button>
+                      </a>
+                      <a href="https://github.com/oscarvonrue" target="_blank">
+                        <button id="github" class="btn btn-dark"><i class="fa-brands fa-github"></i></button>
+                      </a>
+                      <a href="https://www.instagram.com/oscar.vm_00/" target="_blank">
+                        <button id="instagram" class="btn btn-dark"><i class="fa-brands fa-instagram"></i></button>
+                      </a>
+                </div>
+                <h4 class="mt-4">Este sitio está desarrollado en:</h4>
+                <div class="d-flex justify-content-center gap-3">
+                    <button class="btn btn-dark"> <i id="abc" class="fa-brands fa-html5"></i>HTML</button>
+                    <button class="btn btn-dark"><i id="abc" class="fa-brands fa-css3-alt"></i>CSS</button>
+                    <button class="btn btn-dark"><i id="abc" class="fa-brands fa-bootstrap"></i>Bootstrap</button>
+                    <button class="btn btn-dark"><i  id="abc" class="fa-brands fa-js"></i>JavaScript</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+       // Detecta la visibilidad de las secciones y resalta el enlace correspondiente
+document.addEventListener('DOMContentLoaded', function() {
+    // Selecciona todas las secciones
+    const sections = document.querySelectorAll('section');
+
+    // Crea una instancia del IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Si la sección está en vista (visible en la pantalla)
+            if (entry.isIntersecting) {
+                // Obtiene el id de la sección visible
+                const sectionId = entry.target.id;
+
+                // Resalta el enlace correspondiente
+                setActiveLink(sectionId);
+            }
+        });
+    }, { threshold: 0.5 }); // Configura el umbral de visibilidad al 50%
+
+    // Observa cada sección
+    sections.forEach(section => observer.observe(section));
+});
+
+// Función para resaltar el enlace activo
+function setActiveLink(sectionId) {
+    // Eliminar la clase "active" de todos los enlaces
+    const links = document.querySelectorAll('aside a');
+    links.forEach(link => link.classList.remove('active'));
+
+    // Añadir la clase "active" al enlace correspondiente
+    const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+}
+
+    </script>
+</body>
+</html>
